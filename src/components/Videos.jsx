@@ -2,16 +2,21 @@ import { Box, Stack } from "@mui/material";
 import { VideoCard } from "src/components";
 
 function Videos({ videos }) {
-	console.log(videos);
-	return (
-		<Stack direction="row" flexWrap="wrap" gap={2}>
-			{videos.map((video, index) => (
-				<Box key={index + 1}>
-					<VideoCard video={video} />
-				</Box>
-			))}
-		</Stack>
-	);
+  return (
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(268px, 1fr))",
+        gap: "16px",
+      }}
+    >
+      {videos.map((video, index) => (
+        <Box key={index + 1}>
+          <VideoCard video={video} />
+        </Box>
+      ))}
+    </Box>
+  );
 }
 
 export default Videos;
