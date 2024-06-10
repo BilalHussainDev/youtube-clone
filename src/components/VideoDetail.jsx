@@ -13,12 +13,16 @@ function VideoDetail() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetchFromApi(`/video/details?video_id=${id}`).then((data) =>
-      setVideoDetails(data)
-    );
-    fetchFromApi(`/video/recommendations?video_id=${id}`).then((data) =>
-      setVideos(data.videos)
-    );
+    (async () => {
+      const videosData = await fetchFromApi(
+        `/video/recommendations?video_id=${id}`
+      );
+      const videosDetailsData = await fetchFromApi(
+        `/video/details?video_id=${id}`
+      );
+      setVideos(videosData.videos);
+      setVideoDetails(videosDetailsData);
+    })();
   }, [id]);
 
   return (

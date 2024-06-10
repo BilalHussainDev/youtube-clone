@@ -35,6 +35,7 @@ a {
 .react-player {
   height: 68vh !important;
   width: 100% !important;
+  min-width: 600px !important;
 }
 
 .search-bar {
@@ -61,7 +62,7 @@ a {
 }
 
 .category-btn:hover {
-  background-color: #FC1503 !important;
+  background-color: #fc1503 !important;
   color: white !important;
 }
 
@@ -73,11 +74,18 @@ a {
   .category-btn {
     margin: 10px;
   }
+  .react-player {
+    height: 56vw !important;
+  }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .copyright {
     display: none !important;
+  }
+  .react-player {
+    width: 100% !important;
+    min-width: 100% !important;
   }
 }
 
@@ -87,6 +95,6 @@ a {
   }
 
   .search-bar {
-    width: 200px;
+    width: 50vw;
   }
 }
