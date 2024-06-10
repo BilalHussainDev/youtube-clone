@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import { VideoCard } from "src/components";
 
 function Videos({ videos }) {
@@ -10,11 +10,12 @@ function Videos({ videos }) {
         gap: "16px",
       }}
     >
-      {videos.map((video, index) => (
-        <Box key={index + 1}>
-          <VideoCard video={video} />
-        </Box>
-      ))}
+      {videos?.length > 0 &&
+        videos?.map((video, index) => (
+          <Box key={index + 1}>
+            <VideoCard video={video} />
+          </Box>
+        ))}
     </Box>
   );
 }

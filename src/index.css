@@ -32,6 +32,11 @@ a {
   background-color: transparent;
 }
 
+.react-player {
+  height: 68vh !important;
+  width: 100% !important;
+}
+
 .search-bar {
   border: none;
   outline: none;
