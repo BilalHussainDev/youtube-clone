@@ -17,17 +17,17 @@ function VideoDetail() {
       const videosData = await fetchFromApi(
         `/video/recommendations?video_id=${id}`
       );
+      setVideos(videosData.videos);
       const videosDetailsData = await fetchFromApi(
         `/video/details?video_id=${id}`
       );
-      setVideos(videosData.videos);
       setVideoDetails(videosDetailsData);
     })();
   }, [id]);
 
   return (
     <Box sx={{ minHeight: "calc(100vh - 80px)" }}>
-      {!(videos || videoDetails) ? (
+      {!videos || !videoDetails ? (
         <Typography variant="h5" color="#fff" sx={{ p: 2 }}>
           Loading...
         </Typography>
